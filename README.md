@@ -1,6 +1,6 @@
 # lnav-ruby-logger-format
 
-Ruby Logger format for [http://lnav.org](lnav). View Ruby logs and easily find critical information.
+Ruby Logger format for [lnav](http://lnav.org). View Ruby logs and easily find critical information.
 
 This format matches the default Ruby stdlib Logger output. If you use a custom formatter with Logger, you'll need to edit the Regexp in the format file to account for your custom formatting.
 
