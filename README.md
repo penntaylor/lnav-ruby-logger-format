@@ -1,0 +1,1 @@
+# lnav-ruby-logger-format
