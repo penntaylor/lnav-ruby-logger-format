@@ -1,0 +1,33 @@
+{
+	"rubylogger" : {
+		"title"			: "Ruby Logger format",
+		"description"	: "Log format used by Ruby's std::lib::Logger class",
+		"url"			: "",
+		"regex" : {
+			"rubylogger" : {
+				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)\\]\\s+(?<alert_level>\\w+)\\s+--\\s+:\\s+(?<body>\\S.*)$"
+			}
+		},
+		"level-field" : "alert_level",
+		"level" : {
+			"info"	: "INFO",
+			"error" : "ERROR",
+			"warning" : "WARN",
+			"debug" : "DEBUG",
+			"fatal" : "FATAL",
+			"info"  : "UNKNOWN"
+		},
+		"value" : {
+			"alert_level"	: { "kind" : "string", "identifier" : true },
+			"source"		: { "kind" : "string", "identifier" : true },
+			"debug_level"	: { "kind" : "string", "identifier" : true },
+			"body"			: { "kind" : "string" },
+                        "pid"           : { "kind" : "integer", "identifier" : true }
+		},
+		"sample" : [
+			{
+				"line"	: "I, [2016-07-25T15:38:47.443898 #11668]  INFO -- : PDFMunger: remove_blank_pages"
+			}
+		]
+	}
+}
