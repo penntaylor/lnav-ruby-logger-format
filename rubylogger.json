@@ -4,7 +4,7 @@
 		"description"	: "Log format used by Ruby's std::lib::Logger class",
 		"url"			: "",
 		"regex" : {
-			"rubylogger" : {
+			"std" : {
 				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)(:0x[0-9a-f]+)?\\]\\s+(?<alert_level>\\w+)\\s+--\\s+(:\\s+)?(?<body>\\S.*)$"
 			}
 		},
@@ -17,6 +17,7 @@
 			"fatal" : "FATAL",
 			"info"  : "UNKNOWN"
 		},
+		"opid-field" : "pid",
 		"value" : {
 			"alert_level"	: { "kind" : "string", "identifier" : true },
 			"source"		: { "kind" : "string", "identifier" : true },
