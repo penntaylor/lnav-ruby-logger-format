@@ -4,8 +4,8 @@
 		"description"	: "Log format used by Ruby's std::lib::Logger class",
 		"url"			: "",
 		"regex" : {
-			"rubylogger" : {
-				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)\\]\\s+(?<alert_level>\\w+)\\s+--\\s+:\\s+(?<body>\\S.*)$"
+			"std" : {
+				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)(:0x[0-9a-f]+)?\\]\\s+(?<alert_level>\\w+)\\s+--\\s+(:\\s+)?(?<body>\\S.*)$"
 			}
 		},
 		"level-field" : "alert_level",
@@ -17,6 +17,7 @@
 			"fatal" : "FATAL",
 			"info"  : "UNKNOWN"
 		},
+		"opid-field" : "pid",
 		"value" : {
 			"alert_level"	: { "kind" : "string", "identifier" : true },
 			"source"		: { "kind" : "string", "identifier" : true },
@@ -27,6 +28,9 @@
 		"sample" : [
 			{
 				"line"	: "I, [2016-07-25T15:38:47.443898 #11668]  INFO -- : PDFMunger: remove_blank_pages"
+			},
+			{
+				"line"	: "I, [2016-11-01T14:05:44.891756 #507:0x007f0684073ca8]  INFO -- Completed 200 OK in 8993ms (Views: 1.9ms | ActiveRecord: 0.0ms)"
 			}
 		]
 	}
