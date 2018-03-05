@@ -5,7 +5,7 @@
 		"url"			: "",
 		"regex" : {
 			"rubylogger" : {
-				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)\\]\\s+(?<alert_level>\\w+)\\s+--\\s+:\\s+(?<body>\\S.*)$"
+				"pattern" : "^[D,I,N,W,E,F,U], \\[(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}\\.\\d{6}) #(?<pid>\\d+)\\]\\s+(?<alert_level>\\w+)\\s+--\\s+(?<program_name>[^:]*):\\s+(?<body>\\S.*)$"
 			}
 		},
 		"level-field" : "alert_level",
@@ -22,7 +22,8 @@
 			"source"		: { "kind" : "string", "identifier" : true },
 			"debug_level"	: { "kind" : "string", "identifier" : true },
 			"body"			: { "kind" : "string" },
-                        "pid"           : { "kind" : "integer", "identifier" : true }
+                        "pid"           : { "kind" : "integer", "identifier" : true },
+                        "program_name"  : { "kind" : "string", "identifier" : true }
 		},
 		"sample" : [
 			{
